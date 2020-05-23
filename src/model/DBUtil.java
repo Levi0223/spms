@@ -66,7 +66,7 @@ public class DBUtil {
 
     private void setParams(String[] params) {
         if (params != null) {
-            for (int i = 0; i <= params.length; i++) {
+            for (int i = 0; i < params.length; i++) {
                 try {
                     preparedStatement.setString(i + 1, params[i]);
                 } catch (SQLException e) {

@@ -6,10 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":"
+            + request.getServerPort() + request.getContextPath() + "/";
+%>
 <html>
 <head>
     <title>学生实习管理系统</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <%--<link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css">--%>
 </head>
 <body>
 <div class="container" style="padding: 100px">
@@ -29,10 +35,12 @@
                        name="password">
             </div>
         </div>
-        <br>
+        <div class="form-group">
+            <p id="hint" style="text-align: center"></p>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-5 col-md-1">
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary" id="submit">Sign in</button>
             </div>
             <div class="col-md-offset-7">
                 <button type="reset" class="btn btn-primary">Reset</button>
@@ -42,5 +50,7 @@
 </div>
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<%--<script src="WEB-INF/js/jquery-3.4.1.min.js"></script>--%>
+
 </body>
 </html>
